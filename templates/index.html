@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1 class="game-title"><span>S</span><span>n</span><span>a</span><span>k</span><span>e</span> <span>G</span><span>a</span><span>m</span><span>e</span> 🐍</h1>
+
+  <div id="level-select">
+    <label for="level">Choose Level:</label>
+    <select id="level">
+      <option value="slow">Slow</option>
+      <option value="medium" selected>Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <div class="game-container">
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+  </div>
+
+  <div class="controls">
+    <button onclick="mobileDir('UP')">⬆️</button><br>
+    <button onclick="mobileDir('LEFT')">⬅️</button>
+    <button onclick="mobileDir('DOWN')">⬇️</button>
+    <button onclick="mobileDir('RIGHT')">➡️</button>
+  </div>
+
+  <div id="message"></div>
+
+  <button id="restartBtn" onclick="restartGame()">Restart</button>
+
+  <script src="{{ url_for('static', filename='snake.js') }}"></script>
+</body>
+</html>

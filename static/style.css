@@ -1,0 +1,67 @@
+body {
+  background-color: #000;
+  font-family: 'Comic Sans MS', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.game-title span {
+  font-size: 32px;
+  font-weight: bold;
+  color: hsl(calc(var(--i, 0) * 40), 100%, 60%);
+  animation: colorShift 3s infinite;
+  display: inline-block;
+}
+
+.game-title span:nth-child(n) {
+  --i: calc(var(--i, 0) + 1);
+}
+
+@keyframes colorShift {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); color: #f0f; }
+  100% { transform: scale(1); }
+}
+
+canvas {
+  border: 6px solid green;
+  background-color: #111;
+  margin-top: 20px;
+}
+
+.controls button {
+  font-size: 24px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+#restartBtn {
+  margin-top: 15px;
+  display: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #ff4081;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#level-select {
+  margin-top: 15px;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
